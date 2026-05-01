@@ -5,7 +5,7 @@ import React from "react";
 // single continuous stroke to feel artisanal and editorial.
 export default function Monogram({
   size = 48,
-  stroke = "#333333",
+  stroke = "var(--gd-carvao)",
   fill = "none",
   className = "",
   ...props
@@ -62,7 +62,7 @@ export default function Monogram({
 /**
  * Full wordmark — monogram on top, GANDORA in Cinzel, hint "por Gabriela Diniz" in Great Vibes.
  */
-export function Wordmark({ color = "#333333", accent = "#C08261", size = "md" }) {
+export function Wordmark({ color = "var(--gd-carvao)", accent = "var(--gd-terracota)", size = "md" }) {
   const dims = {
     sm: { m: 28, title: "text-[18px]", sig: "text-[14px]" },
     md: { m: 44, title: "text-[26px]", sig: "text-[18px]" },

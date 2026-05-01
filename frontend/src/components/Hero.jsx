@@ -10,7 +10,7 @@ export default function Hero() {
     <section
       id="top"
       data-testid="hero-section"
-      className="relative pt-32 md:pt-36 pb-20 md:pb-28 overflow-hidden"
+      className="relative pt-32 md:pt-36 pb-20 md:pb-28 overflow-hidden reveal"
     >
       {/* ambient candle glow behind everything */}
       <div
@@ -21,7 +21,7 @@ export default function Hero() {
 
       <div className="relative max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16">
         {/* Top meta bar */}
-        <div className="flex items-center justify-between rule-bottom pb-6 mb-12 md:mb-20">
+        <div className="flex items-center justify-between rule-bottom pb-6 mb-12 md:mb-20 reveal reveal-delay-0">
           <span className="eyebrow" data-testid="hero-eyebrow">
             Velas Artesanais · Nº 04 · MMXXVI
           </span>
@@ -31,11 +31,12 @@ export default function Hero() {
         </div>
 
         <div className="grid grid-cols-12 gap-8 md:gap-12 items-start">
+
           {/* LEFT: Copy */}
           <div className="col-span-12 lg:col-span-7 animate-rise">
             <h1
               data-testid="hero-title"
-              className="font-display text-carvao leading-[0.95]"
+              className="font-display text-carvao leading-[0.95] reveal reveal-delay-2"
               style={{
                 fontSize: "clamp(48px, 7.5vw, 108px)",
                 fontWeight: 400,
@@ -48,24 +49,24 @@ export default function Hero() {
               <span className="text-terracota">literária.</span>
             </h1>
 
-            <p className="script text-[32px] md:text-[40px] text-terracota mt-8 mb-10 leading-[1.05]">
+            <p className="script text-[32px] md:text-[40px] text-terracota mt-8 mb-10 leading-[1.05] reveal reveal-delay-3">
               — acenda uma página.
             </p>
 
-            <p className="text-carvao-600 text-[16px] md:text-[17px] leading-[1.75] max-w-[58ch] font-light">
+            <p className="text-carvao-600 text-[16px] md:text-[17px] leading-[1.75] max-w-[58ch] font-light reveal reveal-delay-4">
               A Gandora vive na encruzilhada entre dois rituais silenciosos —
               acender uma chama e virar uma página. Velas artesanais em cera
               vegetal, pensadas para tardes longas, poltronas fundas e capítulos
               sem pressa.
             </p>
 
-            <div className="flex flex-wrap items-center gap-5 mt-12">
+            <div className="flex flex-wrap items-center gap-5 mt-12 reveal reveal-delay-5">
               <a
                 href="#colecoes"
                 data-testid="hero-cta-colecoes"
                 className="gd-btn"
               >
-                Ver Coleções <span aria-hidden>→</span>
+                Descubra coleções <span aria-hidden>→</span>
               </a>
               <a
                 href="#manifesto"
@@ -96,7 +97,7 @@ export default function Hero() {
           {/* RIGHT: Image */}
           <figure
             data-testid="hero-image"
-            className="col-span-12 lg:col-span-5 relative mt-4 lg:mt-0"
+            className="col-span-12 lg:col-span-5 relative mt-4 lg:mt-0 reveal reveal-delay-3"
           >
             <div className="relative aspect-[4/5] overflow-hidden shadow-mid">
               <img
@@ -110,7 +111,7 @@ export default function Hero() {
                 className="absolute inset-0 pointer-events-none"
                 style={{
                   background:
-                    "radial-gradient(ellipse at 50% 35%, rgba(255,220,170,0.25), transparent 55%), linear-gradient(180deg, rgba(51,33,18,0) 55%, rgba(51,33,18,0.35) 100%)",
+                    "radial-gradient(ellipse at 50% 35%, rgba(192,130,97,0.22), transparent 55%), linear-gradient(180deg, rgba(51,33,18,0) 55%, rgba(51,33,18,0.35) 100%)",
                 }}
               />
               {/* Breathing flame spot */}
@@ -121,7 +122,7 @@ export default function Hero() {
                   width: 120,
                   height: 120,
                   background:
-                    "radial-gradient(circle, rgba(255,226,180,0.55), rgba(255,200,130,0.1) 55%, transparent 75%)",
+                    "radial-gradient(circle, rgba(192,130,97,0.45), rgba(192,130,97,0.1) 55%, transparent 75%)",
                   filter: "blur(4px)",
                 }}
               />
@@ -134,15 +135,6 @@ export default function Hero() {
               </figcaption>
             </div>
 
-            {/* Small kraft card as accent */}
-            <div
-              aria-hidden="true"
-              className="absolute -bottom-8 -left-8 md:-left-12 gd-kraft-tex w-[160px] h-[100px] hidden md:flex items-center justify-center shadow-low"
-            >
-              <span className="font-mono text-[10px] tracking-[0.22em] uppercase">
-                Lacre · Cera
-              </span>
-            </div>
           </figure>
         </div>
       </div>

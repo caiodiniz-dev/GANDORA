@@ -6,22 +6,22 @@ export default function Manifesto() {
     <section
       id="manifesto"
       data-testid="manifesto-section"
-      className="relative py-24 md:py-32 bg-cera-50"
+      className="relative py-24 md:py-32 bg-cera-50 reveal"
     >
       <div className="gd-paper-noise absolute inset-0" aria-hidden="true" />
       <div className="relative max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16">
         <div className="grid grid-cols-12 gap-8 md:gap-12">
           {/* LEFT — index + label */}
           <aside className="col-span-12 md:col-span-3">
-            <div className="flex md:flex-col md:gap-6 gap-4 items-start md:sticky md:top-28">
+            <div className="flex md:flex-col md:gap-6 gap-4 items-start md:sticky md:top-28 reveal reveal-delay-0">
               <div className="sec-index">§ I</div>
               <div className="eyebrow">Manifesto</div>
-              <Monogram size={36} stroke="#C08261" className="hidden md:block mt-6" />
+              <Monogram size={36} stroke="var(--gd-terracota)" className="hidden md:block mt-6" />
             </div>
           </aside>
 
           {/* RIGHT — editorial body */}
-          <div className="col-span-12 md:col-span-9 max-w-[64ch]">
+          <div className="col-span-12 md:col-span-9 max-w-[64ch] reveal reveal-delay-1">
             <h2
               className="font-display text-carvao mb-12"
               style={{

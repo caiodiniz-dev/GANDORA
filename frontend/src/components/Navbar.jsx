@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from "react";
-import Monogram from "./Monogram";
 import { Menu, X } from "lucide-react";
 
 const LINKS = [
   { label: "Manifesto", href: "#manifesto" },
-  { label: "Coleções", href: "#colecoes" },
+  { label: "Detalhes", href: "#detalhes" },
   { label: "Ritual", href: "#ritual" },
-  { label: "Sobre", href: "#sobre" },
+  { label: "Coleções", href: "#colecoes" },
+  { label: "Processo", href: "#processo" },
   { label: "Contato", href: "#contato" },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/gandora.porgabriela/",
+    external: true,
+  },
 ];
 
 export default function Navbar() {
@@ -23,11 +28,10 @@ export default function Navbar() {
   return (
     <header
       data-testid="site-navbar"
-      className={`fixed top-0 left-0 right-0 z-50 transition-[background,border,backdrop-filter] duration-500 ease-candle ${
-        scrolled
-          ? "bg-cera/90 border-b border-[rgba(51,51,51,0.08)] backdrop-blur-[6px]"
-          : "bg-transparent border-b border-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-[background,border,backdrop-filter] duration-500 ease-candle ${scrolled
+        ? "bg-cera/90 border-b border-[rgba(51,51,51,0.14)] backdrop-blur-[6px]"
+        : "bg-transparent border-b border-transparent"
+        }`}
       style={{ transition: "background-color 400ms cubic-bezier(0.36,0.07,0.19,0.97), border-color 400ms" }}
     >
       <div className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16">
@@ -37,10 +41,11 @@ export default function Navbar() {
             data-testid="navbar-logo"
             className="flex items-center gap-3 group"
           >
-            <Monogram size={32} stroke="#333333" className="transition-transform duration-700 ease-candle group-hover:rotate-[-3deg]" />
-            <span className="font-display text-[18px] tracking-[0.22em] text-carvao">
-              GANDORA
-            </span>
+            <img
+              src={`${process.env.PUBLIC_URL}/logo-terracota.png`}
+              alt="GANDORA terracota logo"
+              className="h-10 md:h-12 w-auto transition-transform duration-700 ease-candle group-hover:-translate-y-0.5"
+            />
           </a>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -48,6 +53,8 @@ export default function Navbar() {
               <a
                 key={l.href}
                 href={l.href}
+                target={l.external ? "_blank" : undefined}
+                rel={l.external ? "noreferrer noopener" : undefined}
                 data-testid={`nav-link-${l.label.toLowerCase()}`}
                 className="nav-link font-mono text-[11px] tracking-[0.22em] uppercase text-carvao-600"
               >
