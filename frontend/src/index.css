@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Great+Vibes&family=JetBrains+Mono:wght@300;400&family=Montserrat:wght@300;400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gd-cera: #f9f6f0;
+  --gd-cera-50: #fbf9f4;
+  --gd-cera-100: #f4efe5;
+  --gd-paper-tint: #ede6d7;
+  --gd-terracota: #c08261;
+  --gd-terracota-800: #95613f;
+  --gd-terracota-900: #5c3a22;
+  --gd-salvia: #8a9a5b;
+  --gd-salvia-900: #3d4626;
+  --gd-carvao: #333333;
+  --gd-carvao-400: #6b6b68;
+  --gd-kraft: #d9c7a0;
+  --rule: rgba(51, 51, 51, 0.14);
+  --rule-strong: rgba(51, 51, 51, 0.28);
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+html,
+body {
+  background: var(--gd-cera);
+  color: var(--gd-carvao);
+  font-family: "Montserrat", "Helvetica Neue", system-ui, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  line-height: 1.7;
+}
+
+::selection {
+  background: #c08261;
+  color: #f9f6f0;
+}
+
+/* ---------- Paper noise overlay ---------- */
+.gd-paper-noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(rgba(51, 51, 51, 0.028) 1px, transparent 1px),
+    radial-gradient(rgba(51, 51, 51, 0.02) 1px, transparent 1px);
+  background-size: 3px 3px, 7px 7px;
+  background-position: 0 0, 1px 2px;
+  mix-blend-mode: multiply;
+  opacity: 0.7;
+  z-index: 0;
+}
+
+/* ---------- Candle glow ---------- */
+.gd-candle-glow {
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(255, 226, 180, 0.55), transparent 55%),
+    radial-gradient(ellipse at 30% 20%, rgba(192, 130, 97, 0.2), transparent 55%),
+    radial-gradient(ellipse at 70% 80%, rgba(138, 154, 91, 0.14), transparent 60%);
+}
+
+.gd-kraft-tex {
+  background-color: #c9b689;
+  background-image:
+    radial-gradient(at 25% 30%, rgba(165, 138, 90, 0.4), transparent 35%),
+    radial-gradient(at 75% 80%, rgba(120, 95, 55, 0.35), transparent 40%),
+    repeating-linear-gradient(45deg, rgba(140, 110, 70, 0.07) 0 1px, transparent 1px 4px),
+    repeating-linear-gradient(-30deg, rgba(80, 55, 30, 0.05) 0 2px, transparent 2px 6px);
+  color: #4a3a22;
+}
+
+/* ---------- Typography helpers ---------- */
+.font-display {
+  font-family: "Cinzel Decorative", "Cinzel", serif;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+.eyebrow {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gd-carvao-400);
+}
+.script {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+}
+.rule-top {
+  border-top: 1px solid var(--rule);
+}
+.rule-bottom {
+  border-bottom: 1px solid var(--rule);
+}
+
+/* ---------- Link underline editorial ---------- */
+.nav-link {
+  position: relative;
+  padding-bottom: 2px;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 0;
+  background: currentColor;
+  transition: width 400ms cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+.nav-link:hover {
+  color: var(--gd-terracota);
+}
+
+/* ---------- Editorial card ---------- */
+.gd-card {
+  background: var(--gd-cera-50);
+  border: 1px solid var(--rule);
+  transition:
+    transform 400ms cubic-bezier(0.36, 0.07, 0.19, 0.97),
+    box-shadow 400ms cubic-bezier(0.36, 0.07, 0.19, 0.97);
+  will-change: transform;
+}
+.gd-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 40px -22px rgba(51, 33, 18, 0.28);
+}
+
+/* ---------- Button editorial ---------- */
+.gd-btn {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border: 1px solid var(--gd-carvao);
+  background: transparent;
+  color: var(--gd-carvao);
+  transition: all 300ms cubic-bezier(0.36, 0.07, 0.19, 0.97);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.gd-btn:hover {
+  background: var(--gd-carvao);
+  color: var(--gd-cera);
+}
+.gd-btn:active {
+  transform: scale(0.98);
+}
+.gd-btn--terracota {
+  border-color: var(--gd-terracota);
+  color: var(--gd-terracota);
+}
+.gd-btn--terracota:hover {
+  background: var(--gd-terracota);
+  color: var(--gd-cera);
+}
+.gd-btn--light {
+  border-color: var(--gd-cera);
+  color: var(--gd-cera);
+}
+.gd-btn--light:hover {
+  background: var(--gd-cera);
+  color: var(--gd-carvao);
+}
+
+/* ---------- Section index numerals ---------- */
+.sec-index {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: var(--gd-carvao-400);
+}
+
+/* ---------- Images — warm editorial filter ---------- */
+.editorial-img {
+  filter: saturate(0.92) contrast(1.02);
+  transition: filter 600ms ease, opacity 600ms ease, transform 900ms cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+.editorial-img:hover {
+  filter: saturate(1) contrast(1.04);
+}
+
+/* ---------- Breathe flame ---------- */
+.flame-breathe {
+  animation: breathe 6s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+  transform-origin: center bottom;
+}
+
+/* ---------- Drop cap ---------- */
+.dropcap::first-letter {
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 900;
+  float: left;
+  font-size: 4.6rem;
+  line-height: 0.85;
+  padding: 6px 12px 0 0;
+  color: var(--gd-terracota);
+}
+
+/* ---------- Horizontal rule ornamental ---------- */
+.gd-orn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--gd-carvao-400);
+}
+.gd-orn::before,
+.gd-orn::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+/* ---------- Form inputs ---------- */
+.gd-input {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--rule-strong);
+  padding: 14px 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: var(--gd-carvao);
+  outline: none;
+  transition: border-color 300ms ease;
+}
+.gd-input:focus {
+  border-bottom-color: var(--gd-terracota);
+}
+.gd-input::placeholder {
+  color: var(--gd-carvao-400);
+  letter-spacing: 0.06em;
+}

@@ -1,0 +1,6 @@
+/* App-level styles — minimal, defers to index.css */
+.app-shell {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
