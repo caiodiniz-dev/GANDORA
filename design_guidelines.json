@@ -1,0 +1,74 @@
+{
+  "theme": "light",
+  "archetype": "1 (Organic & Earthy)",
+  "colors": {
+    "background": "#F9F6F0",
+    "text_primary": "#333333",
+    "text_secondary": "rgba(51, 51, 51, 0.7)",
+    "primary_accent": "#C08261",
+    "secondary_accent": "#8A9A5B",
+    "kraft": "#D9C7A0",
+    "border_color": "rgba(51, 51, 51, 0.14)"
+  },
+  "typography": {
+    "primary_font": "Cinzel Decorative",
+    "secondary_font": "Montserrat",
+    "signature_font": "Great Vibes",
+    "mono_font": "JetBrains Mono",
+    "font_rules": {
+      "headings": "Cinzel Decorative, UPPERCASE, tracking-wide (0.04-0.08em)",
+      "body": "Montserrat, 300/400 weight",
+      "signature": "Great Vibes, never uppercase, min 18px",
+      "microcopy": "JetBrains Mono, uppercase or numbers (e.g., Nº 04, MMXXVI)"
+    }
+  },
+  "spacing_and_layout": {
+    "base_spacing": "8pt",
+    "section_spacing": "88px to 120px",
+    "corners": "sharp (border-radius: 0), NEVER rounded",
+    "borders": "1px solid rgba(51, 51, 51, 0.14)",
+    "shadows": "Warm amber shadows. No neutral gray. e.g. shadow-[0_12px_40px_rgba(192,130,97,0.15)]",
+    "layout_style": "Editorial magazine layout, asymmetrical or left-aligned, generous whitespace. Never standard centered SaaS layout."
+  },
+  "interactions_and_motion": {
+    "hover_state": "text color changes to #C08261 (terracota), cards translateY(-4px)",
+    "active_press": "scale(0.98)",
+    "animations": "Breath-like transitions using cubic-bezier(0.36, 0.07, 0.19, 0.97). 6s breath animation for candle flame elements.",
+    "effects": "Paper noise texture overlay on the body. Candle glow radial gradients (warm amber/terracota) as hero atmosphere. NO glassmorphism. NO purple gradients."
+  },
+  "content_guidelines": {
+    "language": "100% pt-BR",
+    "tone": "Editorial, contemplative, silent. No exclamation marks, no 'compre agora'. Em-dash (—), mid-dot (·), ampersand (&) highly encouraged.",
+    "icons": "NO emojis. Use Lucide with stroke-width 1.25 only for essential UI (cart, search, menu). Use brand monogram as the single symbolic icon."
+  },
+  "image_urls": {
+    "hero_atmosphere": {
+      "url": "https://images.unsplash.com/photo-1698953185958-a8b753c9b2c3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwxfHxjYW5kbGUlMjBkYXJrJTIwbGlicmFyeXxlbnwwfHx8fDE3Nzc2NjEwOTJ8MA&ixlib=rb-4.1.0&q=85",
+      "description": "A lit candle sitting on top of a wooden shelf, warm dark library aesthetic."
+    },
+    "collection_cedro_tabaco": {
+      "url": "https://images.unsplash.com/photo-1517912492584-df5423d3c437?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwyfHxjYW5kbGUlMjBkYXJrJTIwbGlicmFyeXxlbnwwfHx8fDE3Nzc2NjEwOTJ8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Gin & Tonic candle on a book."
+    },
+    "collection_jardim_monastico": {
+      "url": "https://images.unsplash.com/photo-1762102866829-427130c23d12?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwxfHxjZXJhbWljJTIwY2FuZGxlJTIwd2FybSUyMGxpZ2h0fGVufDB8fHx8MTc3NzY2MTA5Mnww&ixlib=rb-4.1.0&q=85",
+      "description": "Lit candle in a decorative bowl with red/warm accents."
+    },
+    "collection_luz_tempo": {
+      "url": "https://images.unsplash.com/photo-1692953687790-9d33f0129a0b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwyfHxjZXJhbWljJTIwY2FuZGxlJTIwd2FybSUyMGxpZ2h0fGVufDB8fHx8MTc3NzY2MTA5Mnww&ixlib=rb-4.1.0&q=85",
+      "description": "Table with a vase of flowers and a warm candle on it."
+    },
+    "sobre_processo": {
+      "url": "https://images.unsplash.com/photo-1513185041617-8ab03f83d6c5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHwyfHxib29rcyUyMGFlc3RoZXRpYyUyMHdhcm0lMjBkYXJrfGVufDB8fHx8MTc3NzY2MTA5Mnww&ixlib=rb-4.1.0&q=85",
+      "description": "Brown books closeup photography, warm lighting."
+    }
+  },
+  "instructions_to_main_agent": [
+    "Load Google Fonts: 'Cinzel Decorative', 'Montserrat', 'Great Vibes', 'JetBrains Mono'.",
+    "Construct the site in pure React/Tailwind. Do NOT use Shadcn cards or buttons if they enforce border-radius. Everything must be radius 0.",
+    "Implement the 'Coleções' as a fictional editorial grid with the images provided (Cedro & Tabaco, Luz & Tempo, Jardim Monástico).",
+    "Ensure all backgrounds use the #F9F6F0 (Cera) color, except where you deliberately use a dark block (in which case text should be light).",
+    "Use a soft noise overlay (`mix-blend-mode: multiply; opacity: 0.05`) to simulate organic paper texture.",
+    "Add `data-testid` attributes to all interactive elements for robust automated testing."
+  ]
+}
